@@ -1,0 +1,30 @@
+/* Josh W Comeau's CSS Reset, condensed joshwcomeau.com */
+*, *::before, *::after {box-sizing: border-box;}
+* {margin: 0;padding: 0;}
+body {line-height: 1.5;-webkit-font-smoothing: antialiased;text-align: center;}
+img, picture, video, canvas, svg {display: block;max-width: 100%;}
+input, button, textarea, select {font: inherit;}
+p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
+#root, #__next {isolation: isolate;}
+
+
+
+header {background-color: pink;max-width: 1200px;margin: 0px auto;text-align: left;}
+nav {}
+nav h1 {background-color: red;}
+nav ul {background-color: orange;}
+
+main {background: gray;}
+article {background-color: yellow;max-width: 1200px;margin: 0px auto;text-align: left;align-content: flex-start;display: grid;grid-template-rows: 1fr 1fr;grid-template-columns: 1fr 1fr 300px 1fr;grid-column-gap: 0;}
+.intro {grid-column-start: 2;grid-column-end: 5;}
+.tagline {grid-column-start: 2;grid-column-end: 5;}
+.img {grid-column-start: 1;grid-column-end: 1;width: 300px;grid-row-start: 1;grid-row-end: 4;}
+.bio {grid-column-start: 2;grid-column-end: 5;}
+div {border: 1px solid black;}
+h2 {background-color: green;}
+h3 {background-color: gray;}
+dl {background-color: coral;}
+dt {}
+dd {}
+
+footer {background-color: blue;}
