@@ -44,6 +44,7 @@ h1, h2, h3, h4, form legend {
     color: var(--color-text-heading);
     margin-bottom: var(--space-xxs);
     line-height: var(--heading-line-height);
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
 }
 /* text size */
 .text--xxxl {
@@ -56,7 +57,7 @@ h3, .text--lg {
     font-size: var(--text-lg);
     font-family: var(--font-secondary);
 }
-p span, p a {
+p span, p a, main li a {
 	font-family: var(--font-secondary);
 	font-size: var(--text-sm);
 	text-transform: uppercase;
@@ -64,6 +65,7 @@ p span, p a {
 }
 h4, .text--md {
     font-size: var(--text-md);
+	font-family: var(--font-secondary);
 }
 .text--sm, small {
     font-size: var(--text-sm);
@@ -163,43 +165,57 @@ h1 {
 /* Grid Body */
 article {
 	max-width: 960px;
-	margin: 0px auto;
-	padding: 0 20px;
+	margin: 0 auto;
+	padding: 1.5em 1.5em;
 	text-align: left;
 	display: grid;
-	grid-template-columns: 300px 1fr;
+	grid-template-columns: repeat(12, [col-start] 1fr, minmax(min-content, 300px));
 	grid-template-rows: auto;
-	column-gap: 20px;
-	row-gap: 20px;
+	column-gap: 1.5em;
+	row-gap: 1em;
+	justify-content: center;
 	justify-items: baseline;
-	align-items: start;
 }
 .intro {
-	grid-column-start: 2;
-	grid-column-end: 3;
+	grid-column-start: 5;
+	grid-column-end: 13;
 	grid-row-start: 1;
 	grid-row-end: 2;
-	padding-top: 50px;
+	padding-top: 0.5em;
 }
 .tagline {
-	grid-column-start: 2;
-	grid-column-end: 3;
+	grid-column-start: 5;
+	grid-column-end: 13;
 	grid-row-start: 2;
 	grid-row-end: 3;
 }
 .img {
 	grid-column-start: 1;
-	grid-column-end: 2;
+	grid-column-end: 5;
 	grid-row-start: 1;
 	grid-row-end: span 4;
-	margin-top: 50px;
+	margin-top: 2.5em;
+	height: 100%;
+}
+img {
+	height: auto;
 }
 .bio {
-	grid-column-start: 2;
-	grid-column-end: 3;
-	grid-row-start: 3;
-	grid-row-end: 4;
+	grid-column-start: 5;
+	grid-column-end: 13;
+
 }
+.title {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	margin: 0 0 0 auto;
+	width: 100%;
+}
+.highlights {
+	grid-column-start: 5;
+	grid-column-end: 13;
+}
+
 
 
 
@@ -215,6 +231,7 @@ header {
 	z-index: 100;
 	position: relative;
 }
+h1 {position: relative;left: .25em;}
 h1 a {
 	text-indent: 100%;
 	white-space: nowrap;
@@ -259,9 +276,10 @@ header li a:active {
 
 /* Body Design */
 body {font-weight: 400;;}
-main {background: #f4f4f4;padding-bottom: 1em;}
+main {background: #f4f4f4;margin-bottom: 1em;}
 h2 {font-weight: 500;letter-spacing: -0.05em;font-size: 3em;}
-h3 {text-transform: uppercase;font-weight: 700;}
+h3, h4 {text-transform: uppercase;font-weight: 700;}
+.title {text-align: right;}
 .img img {box-shadow: 0px 1px 4px rgba(0,0,0,.3);}
 dl {border-bottom: 1px solid #dfdfdf;padding-top: 1em;}
 dt {font-family: var(--font-secondary);font-style: normal;font-weight: 700;font-size: 0.85em;text-transform: uppercase;padding: 0 0.5em 0.5em 0.5em;}
@@ -269,56 +287,33 @@ dd {font-family: var(--font-secondary);border-top: 1px solid #dfdfdf;color: #999
 dd a {display: block;text-decoration: none;color: #999;padding: 5px;}
 dd a:hover {background-color: #ccc;color: white;}
 p {padding-bottom: 1em;}
-p a {color: black;text-decoration: underline;}
-p a:hover {color: #424e57;text-decoration: none;}
+p a, main li a {color: black;text-decoration: underline;}
+p a:hover, main li a:hover {color: #424e57;text-decoration: none;}
+.fullwidth {background-color: white;}
+.title {font-size: var(--text-sm);padding-top: .25em;line-height: 1.5}
+.cvh {font-size: var(--text-sm);padding: 1em 0 0 0;width: 100%;border-top: 1px dotted rgba(0, 0, 0, 0.1);}
+p.cvv {padding: 0;margin: 0;}
+ul.cvv {padding: 0 0 0 1em;}
+.history {column-count: 3;column-gap: 1em;column-fill: balance;padding-bottom: 0;}
+.history p {padding-bottom: 0}
+.history p:nth-of-type(n + 2) {text-indent: 1.5em;}
+.history p:first-child:first-letter {float: left;font-size: 5em;line-height: 1em;padding: 0px .15em 0 0;}
 
-
-
-/* Footer */
 footer {display: block;clear: both;background-color: white;border-top: 1px solid #f6f6f6;}
 footer p {font-weight: 400;color: #bcc8d1;padding: 1.5em 0;}
-
-
 
 @media only screen and (max-width: 768px) {
 	.intro {font-size: 2.5em;}
 	.tagline {font-size: 1.2em;}
+	.history {column-count: 1;}
+	.title, .cvh {padding: 1.5em 0;margin: 0.5em 1em 0 auto;}
+	.highlights. cvv {padding: 0 1.5em;}
 }
 
 @media only screen and (max-width: 650px) {
 	article {display: block;}
 	.intro {padding: 0.5em 0;font-size: 2.5em;}
 	.tagline {font-size: 1em;}
+	.title {text-align: left;}
 	.img {padding: 1em 0;margin: 0;}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
