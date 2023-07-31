@@ -157,7 +157,6 @@ h1 {
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 1;
-    
 }
 
 
@@ -166,7 +165,7 @@ h1 {
 article {
     max-width: 960px;
     margin: 0 auto;
-    padding: 1.5em 1.5em;
+    padding: 0 1.5em 1.5em 1.5em;
     text-align: left;
     display: grid;
     grid-template-columns: repeat(12, [col-start] 1fr, minmax(min-content, 300px));
@@ -186,12 +185,24 @@ article {
     justify-items: center;
     align-items: end;
 }
+.portdeets {
+    grid-column-start: 8;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.portdesc {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
 .intro {
     grid-column-start: 5;
     grid-column-end: 13;
     grid-row-start: 1;
     grid-row-end: 2;
-    padding-top: 0.5em;
+    padding-top: 0.75em;
 }
 .tagline {
     grid-column-start: 5;
@@ -228,10 +239,9 @@ img {
 
 
 
-
 /* Nav Bar Design */
 header {
-    height: 62px;
+    height: 3.875em;
     width: 100%;
     background: #424e57;
     border-bottom: 1px solid #414547;
@@ -239,7 +249,9 @@ header {
     background-color: #424e57;
     display: block;
     z-index: 100;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 h1 {position: relative;left: .25em;}
 h1 a {
@@ -256,24 +268,24 @@ h1 a {
 h1 a:hover {opacity: .75;}
 h1 a:active {opacity: 1;}
 header li a {
-    padding: 10px 15px;
+    padding: 0.7em 1.05em;
     text-decoration: none;
     color: #97b6bc;
     display: inline-block;
     font-weight: 400;
-    font: normal 14px/1 'Gotham SSm A', 'Gotham SSm B', helvetica, arial, sans-serif;
+    font: normal 0.88em/1 'Gotham SSm A', 'Gotham SSm B', helvetica, arial, sans-serif;
 }
 header li a:hover {
     background-color: rgba(0,0,0,.08);
-    border-radius: 20px;
+    border-radius: 5em;
     box-shadow: inset 0px 0px 3px rgba(0,0,0,.5);
     color: white;
 }
 #current a {
-    border-radius: 20px;
+    border-radius: 5em;
     box-shadow: inset 0px 0px 3px rgba(0,0,0,.7);
     color: white;
-    background: rgba(0,0,0,.14) linear-gradient(top, transparent 0%,rgba(0,0,0,.12) 100%);
+    background-color: rgba(0,0,0,.3);
 }
 header li a:active {
     box-shadow: inset 0px 5px 8px rgba(0,0,0,.6);
@@ -285,8 +297,8 @@ header li a:active {
 
 
 /* Body Design */
-body {font-weight: 400;;}
-main {background: #f4f4f4;margin-bottom: 1em;}
+body {font-weight: 400;}
+main {background: #f4f4f4;padding-top: 5.5em;}
 h2 {font-weight: 500;letter-spacing: -0.05em;font-size: 3em;}
 h3, h4 {text-transform: uppercase;font-weight: 700;}
 .title {text-align: right;}
@@ -325,15 +337,26 @@ footer p {font-weight: 400;color: #bcc8d1;padding: 1.5em 0;}
 .pieces p {color: white;padding: 0 1em 1em 1em;text-shadow: 0px 0px 3px black;font-size: 0.85em;}
 .pieces strong {text-transform: uppercase;opacity: .5;font-weight: normal;}
 
-/* old css
-aside {display: block;border-top: 1px solid #dfdfdf;padding-bottom: 40px;}
-aside h3 {padding: 20px 5px 10px 5px !important;font-size: 28px;}
-aside h3 a {text-decoration: none;color: #506f88;}
-aside h5 strong {text-transform: uppercase;color: #999;font-family: 'Gotham SSm A', 'Gotham SSm B',helvetica,arial,sans-serif;font-style: normal;font-weight: 700;font-size: 12px;}
-aside h5 {font-family: 'Gotham SSm A', 'Gotham SSm B',helvetica,arial,sans-serif;font-style: normal;font-weight: 300;font-size: 13px;padding: 0 0 20px 5px;}
-aside dl {border-bottom: 1px solid #dfdfdf;}
-aside dt {font-style: normal;font-weight: 700;font-size: 12px;text-transform: uppercase;padding: 0 5px 5px 5px;}
-aside dd {padding: 5px;border-top: 1px solid #dfdfdf;color: #999;font-style: normal;font-weight: 400;} */
+/**** Slides ****/
+/*** move to proper grid ***/
+.slideh {padding-top: 1em;}
+#gallery {text-align: center;margin: 1.5em auto 0 auto;width:960px;overflow:hidden;z-index: 800;mask-box-image: url(images/mask.png) 100 stretch;background: transparent;}
+#slides {height:643px;width:960px;overflow:hidden;}
+.slide {float:left;}
+#menu {margin: 0px auto;position: relative;bottom: 2em;}
+#gallery ul {margin: 0;padding: 0;}
+#gallery li {background-color: transparent;display:inline-block;list-style:none;overflow:hidden;}
+#gallery li.act, #gallery li.act:hover, #gallery li a:hover {color: black;background-color: transparent;opacity: 1;}
+#gallery li.act a {cursor:default;opacity: 1;}
+#gallery li a {display:block;opacity: .2;padding: 0 7px;}
+.portdeets {border-top: 1px solid #dfdfdf}
+.portdeets h3 {padding: 0.75em 0.25em 0.25em 0.25em;color: #506f88;}
+.portdeets h5 {padding: 0 0.25em 0.25em 0.25em;font-weight: 400;font-family: var(--font-secondary);}
+.portdeets h5 strong {color: #999;font-size: 0.8em;text-transform: uppercase;}
+.portdeets dl {}
+.portdeets dt {text-transform: uppercase;padding: 0 0.25em 0.25em 0.25em;}
+.portdeets dd {padding: 0.25em;}
+
 
 @media only screen and (max-width: 768px) {
     .intro {font-size: 2.5em;}
@@ -341,6 +364,7 @@ aside dd {padding: 5px;border-top: 1px solid #dfdfdf;color: #999;font-style: nor
     .history {column-count: 1;}
     .title, .cvh {padding: 1.5em 0;margin: 0.5em 1em 0 auto;}
     .highlights. cvv {padding: 0 1.5em;}
+    .portdeets {padding-bottom: 2em;}
 }
 
 @media only screen and (max-width: 650px) {
