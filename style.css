@@ -338,7 +338,7 @@ footer p {font-weight: 400;color: #bcc8d1;padding: 1.5em 0;}
 .pieces strong {text-transform: uppercase;opacity: .5;font-weight: normal;}
 
 /**** Slides ****/
-/*** move to proper grid ***/
+/*** Must move to proper grid ***/
 .slideh {padding-top: 1em;}
 #gallery {text-align: center;margin: 1.5em auto 0 auto;width:960px;overflow:hidden;z-index: 800;mask-box-image: url(images/mask.png) 100 stretch;background: transparent;}
 #slides {height:643px;width:960px;overflow:hidden;}
@@ -365,6 +365,11 @@ footer p {font-weight: 400;color: #bcc8d1;padding: 1.5em 0;}
     .title, .cvh {padding: 1.5em 0;margin: 0.5em 1em 0 auto;}
     .highlights. cvv {padding: 0 1.5em;}
     .portdeets {padding-bottom: 2em;}
+    .pieces {grid-template-columns: repeat(3, 1fr);}
+    /* Must modernize to grid */
+    #gallery, #slides {width: 768px;}
+    #gallery {position: relative;right: 14px;}
+    .slide img {max-width: 740px;height: 496px;}
 }
 
 @media only screen and (max-width: 650px) {
@@ -373,4 +378,9 @@ footer p {font-weight: 400;color: #bcc8d1;padding: 1.5em 0;}
     .tagline {font-size: 1em;}
     .title {text-align: left;}
     .img {padding: 1em 0;margin: 0;}
+    .pieces {grid-template-columns: repeat(2, 1fr);}
+    /* Must modernize to grid */
+    #gallery, #slides {width: 320px;}
+    .slide img {max-width: 320px;height: 214px;}
+    #slides {width: 320px;height:264px;}
 }
