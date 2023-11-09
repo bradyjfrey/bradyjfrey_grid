@@ -9,7 +9,7 @@ p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
 
 /* Sebastiano Guerriero Typography System */
 :root {
-    --font-primary: "Chronicle SSm A", "Chronicle SSm B", georgia, times, seri;
+    --font-primary: "Chronicle SSm A", "Chronicle SSm B", georgia, times, serif;
     --font-secondary: 'Gotham SSm A', 'Gotham SSm B', helvetica, arial, sans-serif;
 
     /* set base values */
